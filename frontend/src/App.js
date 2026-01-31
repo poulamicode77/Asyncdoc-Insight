@@ -1,18 +1,22 @@
 import { useState } from 'react';
-import ProgressPage from "./pages/ProgressPage";
+import ProcessingPage from "./pages/ProcessingPage";
 import UploadPage from "./pages/UploadPage";
+// import ChatbotPage from "./pages/ChatbotPage";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState("upload");
   return (
-    <>
+    <div>
       {currentPage === "upload" && (
-        <UploadPage onNext ={() => setCurrentPage("progress")}/>
+        <UploadPage onNext ={() => setCurrentPage("processing")}/>
       )}
-      {currentPage === "progress" && <ProgressPage/>}
-    </>
+      {currentPage === "processing" && (
+        <ProcessingPage onNext ={() => setCurrentPage("chat")}/>
+      )}
+      {/* {currentPage === "chat" && <ChatbotPage />}*/}
+    </div>
   );
 }
 
