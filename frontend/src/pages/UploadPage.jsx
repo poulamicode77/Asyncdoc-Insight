@@ -1,6 +1,14 @@
 import React from "react";
-function UploadPage(){
-return (<h1>Upload Documents</h1>);
+function UploadPage({ onNext }){
+return (
+    <div>
+        <h2>Upload Documents</h2>
+
+        <button onClick={onNext}>
+            Start Processing
+        </button>
+    </div>    
+    );
 }
 
 export default UploadPage;
